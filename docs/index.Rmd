@@ -2670,7 +2670,7 @@ CUB_Test
 |             **[A.4.1]** Cross-Validation R-Squared = 0.90098, Test R-Squared = 0.90057 
 |             **[A.4.2]** Cross-Validation RMSE = 0.65419, Test RMSE = 0.65571
 |
-```{r section_1.5.16, warning=FALSE, message=FALSE}
+```{r section_1.6, warning=FALSE, message=FALSE}
 ##################################
 # Consolidating all evaluation results
 # for the train and test sets
