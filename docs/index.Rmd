@@ -2661,8 +2661,8 @@ CUB_Test
 |             **[A.1.1]** Cross-Validation R-Squared = 0.92538, Test R-Squared = 0.90717 
 |             **[A.1.2]** Cross-Validation RMSE = 0.55645, Test RMSE = 0.63809
 |      **[A.2]** SVM_R: Support Vector Machine - Radial Basis Function Kernel (<mark style="background-color: #CCECFF">**kernlab**</mark> package)
-|             **[A.1.1]** Cross-Validation R-Squared = 0.91551, Test R-Squared = 0.90989 
-|             **[A.1.2]** Cross-Validation RMSE = 0.59505, Test RMSE = 0.62742
+|             **[A.2.1]** Cross-Validation R-Squared = 0.91551, Test R-Squared = 0.90989 
+|             **[A.2.2]** Cross-Validation RMSE = 0.59505, Test RMSE = 0.62742
 |      **[A.3]** SVM_R: Support Vector Machine - Polynomial Kernel (<mark style="background-color: #CCECFF">**kernlab**</mark> package)
 |             **[A.3.1]** Cross-Validation R-Squared = 0.91167, Test R-Squared = 0.90623 
 |             **[A.3.2]** Cross-Validation RMSE = 0.59505, Test RMSE = 0.63778
