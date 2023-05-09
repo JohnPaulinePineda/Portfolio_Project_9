@@ -1564,7 +1564,7 @@ PCR_Test
 
 ###  1.5.6 Partial Least Squares (PLS)
 |
-| [Partial Least Squares](https://epubs.siam.org/doi/10.1137/0905052) applies dimensionality reduction to address high multicollinearity among predictors in a linear regression. The algorithm calculates summary indices termed as principal components which are linear combinations of the original predictors. The method of least squares is then applied to fit a linear regression model using the first principal components as predictors, with the optimal number determined using cross-validation.
+| [Partial Least Squares](https://epubs.siam.org/doi/10.1137/0905052) applies dimensionality reduction to address high multicollinearity among predictors in a linear regression. The algorithm calculates summary indices termed as partial least squares components which are linear combinations of the original predictors by considering the variation in both the response and the predictor variables. The method of least squares is then applied to fit a linear regression model using the first principal components as predictors, with the optimal number determined using cross-validation.
 |
 | **[A]** The partial least squares model from the  <mark style="background-color: #CCECFF">**pls**</mark> package was implemented through the <mark style="background-color: #CCECFF">**caret**</mark> package. 
 |
@@ -2831,6 +2831,12 @@ print(RMSE_Summary, row.names=FALSE)
 | **[Article]** [Tuning Machine Learning Models Using the Caret R Package](https://machinelearningmastery.com/tuning-machine-learning-models-using-the-caret-r-package/) by Jason Brownlee
 | **[Article]** [Lattice Graphs](http://www.sthda.com/english/wiki/lattice-graphs) by STHDA Team
 | **[Article]** [A Tour of Machine Learning Algorithms](https://machinelearningmastery.com/a-tour-of-machine-learning-algorithms/) by Jason Brownlee
+| **[Article]** [Linear Regression Explained, Step by Step](https://machinelearningcompass.com/machine_learning_models/linear_regression/) by Boris Giba
+| **[Article]** [Ridge Regression Explained, Step by Step](https://machinelearningcompass.com/machine_learning_models/ridge_regression/) by Boris Giba
+| **[Article]** [Introduction to Ridge Regression](https://www.statology.org/ridge-regression/) by Statology Team
+| **[Article]** [Lasso Regression Explained, Step by Step](https://machinelearningcompass.com/machine_learning_models/lasso_regression/) by Boris Giba
+| **[Article]** [Introduction to Lasso Regression](https://www.statology.org/lasso-regression/) by Statology Team
+| **[Article]** [https://machinelearningcompass.com/machine_learning_models/elastic_net_regression/](https://machinelearningcompass.com/machine_learning_models/elastic_net_regression/) by Boris Giba
 | **[Article]** [An Introduction to Multivariate Adaptive Regression Splines](https://www.statology.org/multivariate-adaptive-regression-splines/) by Statology Team
 | **[Article]** [An Introduction to Principal Components Regression](https://www.statology.org/principal-components-regression/) by Statology Team
 | **[Article]** [An Introduction to Partial Least Squares](https://www.statology.org/partial-least-squares/) by Statology Team
