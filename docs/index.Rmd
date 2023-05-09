@@ -2845,7 +2845,7 @@ print(RMSE_Summary, row.names=FALSE)
 | **[Article]** [Introduction to Ridge Regression](https://www.statology.org/ridge-regression/) by Statology Team
 | **[Article]** [Lasso Regression Explained, Step by Step](https://machinelearningcompass.com/machine_learning_models/lasso_regression/) by Boris Giba
 | **[Article]** [Introduction to Lasso Regression](https://www.statology.org/lasso-regression/) by Statology Team
-| **[Article]** [https://machinelearningcompass.com/machine_learning_models/elastic_net_regression/](https://machinelearningcompass.com/machine_learning_models/elastic_net_regression/) by Boris Giba
+| **[Article]** [Elastic Net Regression Explained, Step by Step](https://machinelearningcompass.com/machine_learning_models/elastic_net_regression/) by Boris Giba
 | **[Article]** [An Introduction to Multivariate Adaptive Regression Splines](https://www.statology.org/multivariate-adaptive-regression-splines/) by Statology Team
 | **[Article]** [An Introduction to Principal Components Regression](https://www.statology.org/principal-components-regression/) by Statology Team
 | **[Article]** [An Introduction to Partial Least Squares](https://www.statology.org/partial-least-squares/) by Statology Team
