@@ -1464,9 +1464,11 @@ PLR_E_Test
 
 ```
 
-###  1.5.5 Principal Component Regression (PCR)
+###  1.5.5 Principal Components Regression (PCR)
 |
-| **[A]** The principal component regression model from the  <mark style="background-color: #CCECFF">**pls**</mark> package was implemented through the <mark style="background-color: #CCECFF">**caret**</mark> package. 
+| [Principal Components Regression](https://www.semanticscholar.org/paper/The-relations-of-the-newer-multivariate-statistical-Hotelling/f8b7eada549ed4dd9419d5a3202834d55f0f4748) applies dimensionality reduction to address high multicollinearity among predictors in a linear regression. The algorithm calculates summary indices termed as principal components which are linear combinations of the original predictors by considering the magnitude of their variances. The method of least squares is then applied to fit a linear regression model using the first principal components as predictors, with the optimal number determined using cross-validation.
+|
+| **[A]** The principal components regression model from the  <mark style="background-color: #CCECFF">**pls**</mark> package was implemented through the <mark style="background-color: #CCECFF">**caret**</mark> package. 
 |
 | **[B]** The model contains 1 hyperparameter:
 |      **[B.1]** <span style="color: #FF0000">ncomp</span> = number of components made to vary across a range of values equal to 1 to 35
@@ -1561,6 +1563,8 @@ PCR_Test
 ```
 
 ###  1.5.6 Partial Least Squares (PLS)
+|
+| [Partial Least Squares](https://epubs.siam.org/doi/10.1137/0905052) applies dimensionality reduction to address high multicollinearity among predictors in a linear regression. The algorithm calculates summary indices termed as principal components which are linear combinations of the original predictors. The method of least squares is then applied to fit a linear regression model using the first principal components as predictors, with the optimal number determined using cross-validation.
 |
 | **[A]** The partial least squares model from the  <mark style="background-color: #CCECFF">**pls**</mark> package was implemented through the <mark style="background-color: #CCECFF">**caret**</mark> package. 
 |
@@ -1789,8 +1793,8 @@ AVNN_Test
 | **[A]** The multivariate adaptive regression splines model from the  <mark style="background-color: #CCECFF">**earth**</mark> package was implemented through the <mark style="background-color: #CCECFF">**caret**</mark> package. 
 |
 | **[B]** The model contains 2 hyperparameters:
-|      **[B.1]** <span style="color: #FF0000">nprune</span> = number of terms made to vary across a range of values equal to 5 to 20
-|      **[B.2]** <span style="color: #FF0000">degree</span> = product degree made to vary across a range of values equal to 1 to 5
+|      **[B.1]** <span style="color: #FF0000">nprune</span> = number of model terms made to vary across a range of values equal to 5 to 20
+|      **[B.2]** <span style="color: #FF0000">degree</span> = interaction degree made to vary across a range of values equal to 1 to 5
 |
 | **[C]** The cross-validated model performance of the final model is summarized as follows:
 |      **[C.1]** Final model configuration involves nprune=20 and degree=3
