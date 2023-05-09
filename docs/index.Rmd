@@ -1784,11 +1784,13 @@ AVNN_Test
 
 ###  1.5.8 Multivariate Adaptive Regression Splines (MARS)
 |
+| [Multivariate Adaptive Regression Splines](https://www.jstor.org/stable/2241837), as a form of piecewise linear regression, adapts a solution to local data regions of similar linear response. Each of the local regions is expressed by a different basis function. Only the basis functions and the associated predictor variables that provide a sizeable contribution to the prediction are considered. The algorithm divides the dataset into pieces using points termed as knots which are identified by assessing each point for each predictor as a potential knot and creating a linear regression model using the candidate features. The point that is able to reduce the most error in the model is deemed to be the knot with the process repeated recursively. Regression functions are then fitted to each piece to form a hinge function. The optimal number of knots are determined using cross-validation.
+|
 | **[A]** The multivariate adaptive regression splines model from the  <mark style="background-color: #CCECFF">**earth**</mark> package was implemented through the <mark style="background-color: #CCECFF">**caret**</mark> package. 
 |
 | **[B]** The model contains 2 hyperparameters:
-|      **[B.1]** <span style="color: #FF0000">nprune</span> = number of terms made to vary across a range of values equal to 1 to 5
-|      **[B.2]** <span style="color: #FF0000">degree</span> = product degree made to vary across a range of values equal to 5 to 20
+|      **[B.1]** <span style="color: #FF0000">nprune</span> = number of terms made to vary across a range of values equal to 5 to 20
+|      **[B.2]** <span style="color: #FF0000">degree</span> = product degree made to vary across a range of values equal to 1 to 5
 |
 | **[C]** The cross-validated model performance of the final model is summarized as follows:
 |      **[C.1]** Final model configuration involves nprune=20 and degree=3
@@ -2825,7 +2827,7 @@ print(RMSE_Summary, row.names=FALSE)
 | **[Article]** [Tuning Machine Learning Models Using the Caret R Package](https://machinelearningmastery.com/tuning-machine-learning-models-using-the-caret-r-package/) by Jason Brownlee
 | **[Article]** [Lattice Graphs](http://www.sthda.com/english/wiki/lattice-graphs) by STHDA Team
 | **[Article]** [A Tour of Machine Learning Algorithms](https://machinelearningmastery.com/a-tour-of-machine-learning-algorithms/) by Jason Brownlee
-| **[Article]** [An Introduction to Multivariate Adaptive Regression Spliness](https://www.statology.org/multivariate-adaptive-regression-splines/) by Statology Team
+| **[Article]** [An Introduction to Multivariate Adaptive Regression Splines](https://www.statology.org/multivariate-adaptive-regression-splines/) by Statology Team
 | **[Article]** [An Introduction to Principal Components Regression](https://www.statology.org/principal-components-regression/) by Statology Team
 | **[Article]** [An Introduction to Partial Least Squares](https://www.statology.org/partial-least-squares/) by Statology Team
 | **[Article]** [Cubist Regression Models](https://cran.r-project.org/web/packages/Cubist/vignettes/cubist.html) by Max Kuhn
