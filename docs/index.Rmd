@@ -1674,6 +1674,8 @@ PLS_Test
 
 ###  1.5.7 Averaged Neural Network (AVNN)
 |
+| [Averaged Neural Networks](https://www.cambridge.org/core/books/pattern-recognition-and-neural-networks/4E038249C9BAA06C8F4EE6F044D09C5C) implement fitting of the same neural network model using different random number seeds. All the resulting models are used for prediction by averaging the model scores and translating to continuous responses. Neural networks are comprised of node layers, containing an input layer, one or more hidden layers, and an output layer. Each node, or artificial neuron, connects to another and has an associated weight and threshold. If the output of any individual node is above the specified threshold value, that node is activated, sending data to the next layer of the network. Otherwise, no data is passed along to the next layer of the network.
+|
 | **[A]** The averaged neural network model from the  <mark style="background-color: #CCECFF">**nnet**</mark> package was implemented through the <mark style="background-color: #CCECFF">**caret**</mark> package. 
 |
 | **[B]** The model contains 3 hyperparameters:
@@ -1901,6 +1903,8 @@ MARS_Test
 
 ###  1.5.9 Support Vector Machine - Radial Basis Function Kernel (SVM_R)
 |
+| [Support Vector Machine](http://www.cs.cmu.edu/~pakyan/compbio/references/Drucker_NIPS_1996.pdf) plots each observation in an N-dimensional space corresponding to the number of features in the data set and finds a hyperplane that passes through the data while minimizing its distance with all the data points. The algorithm applies kernel transformation by mapping non-linearly separable data using the similarities between the points in a high-dimensional feature space for improved estimation.
+|
 | **[A]** The support vector machine (radial basis function kernel) model from the  <mark style="background-color: #CCECFF">**kernlab**</mark> package was implemented through the <mark style="background-color: #CCECFF">**caret**</mark> package. 
 |
 | **[B]** The model contains 2 hyperparameters:
@@ -2003,6 +2007,8 @@ SVM_R_Test
 ```
 
 ###  1.5.10 Support Vector Machine - Polynomial Kernel (SVM_P)
+|
+| [Support Vector Machine](http://www.cs.cmu.edu/~pakyan/compbio/references/Drucker_NIPS_1996.pdf) plots each observation in an N-dimensional space corresponding to the number of features in the data set and finds a hyperplane that passes through the data while minimizing its distance with all the data points. The algorithm applies kernel transformation by mapping non-linearly separable data using the similarities between the points in a high-dimensional feature space for improved estimation.
 |
 | **[A]** The support vector machine (polynomial kernel) model from the  <mark style="background-color: #CCECFF">**kernlab**</mark> package was implemented through the <mark style="background-color: #CCECFF">**caret**</mark> package. 
 |
@@ -2832,6 +2838,9 @@ print(RMSE_Summary, row.names=FALSE)
 | **[Article]** [Lattice Graphs](http://www.sthda.com/english/wiki/lattice-graphs) by STHDA Team
 | **[Article]** [A Tour of Machine Learning Algorithms](https://machinelearningmastery.com/a-tour-of-machine-learning-algorithms/) by Jason Brownlee
 | **[Article]** [Linear Regression Explained, Step by Step](https://machinelearningcompass.com/machine_learning_models/linear_regression/) by Boris Giba
+| **[Article]** [Regularization in R Tutorial: Ridge, Lasso and Elastic Net](https://www.datacamp.com/tutorial/tutorial-ridge-lasso-elastic-net) by Datacamp Team
+| **[Article]** [Penalized Regression Essentials: Ridge, Lasso & Elastic Net](http://sthda.com/english/articles/37-model-selection-essentials-in-r/153-penalized-regression-essentials-ridge-lasso-elastic-net) by STHDA Team
+| **[Article]** [Lasso vs Ridge vs Elastic Net | ML](https://www.geeksforgeeks.org/lasso-vs-ridge-vs-elastic-net-ml/) by Geeks for Geeks Team
 | **[Article]** [Ridge Regression Explained, Step by Step](https://machinelearningcompass.com/machine_learning_models/ridge_regression/) by Boris Giba
 | **[Article]** [Introduction to Ridge Regression](https://www.statology.org/ridge-regression/) by Statology Team
 | **[Article]** [Lasso Regression Explained, Step by Step](https://machinelearningcompass.com/machine_learning_models/lasso_regression/) by Boris Giba
@@ -2840,6 +2849,11 @@ print(RMSE_Summary, row.names=FALSE)
 | **[Article]** [An Introduction to Multivariate Adaptive Regression Splines](https://www.statology.org/multivariate-adaptive-regression-splines/) by Statology Team
 | **[Article]** [An Introduction to Principal Components Regression](https://www.statology.org/principal-components-regression/) by Statology Team
 | **[Article]** [An Introduction to Partial Least Squares](https://www.statology.org/partial-least-squares/) by Statology Team
+| **[Article]** [K-Nearest Neighbors Algorithm](https://www.ibm.com/topics/knn#:~:text=The%20k-nearest%20neighbors%20algorithm%2C%20also%20known%20as%20KNN,about%20the%20grouping%20of%20an%20individual%20data%20point.) by IBM Team
+| **[Article]** [Classification Tree](https://support.bccvl.org.au/support/solutions/articles/6000083204-classification-tree) by BCCVL Team
+| **[Article]** [Random Forest](https://support.bccvl.org.au/support/solutions/articles/6000083217-random-forest) by BCCVL Team
+| **[Article]** [Artificial Neural Network](https://support.bccvl.org.au/support/solutions/articles/6000083200-artificial-neural-network) by BCCVL Team
+| **[Article]** [Conditional Inference Trees in R Programming](https://www.geeksforgeeks.org/conditional-inference-trees-in-r-programming/) by Geeks for Geeks Team
 | **[Article]** [Cubist Regression Models](https://cran.r-project.org/web/packages/Cubist/vignettes/cubist.html) by Max Kuhn
 | **[Publication]** [Ridge Regression: Biased Estimation for Nonorthogonal Problems](https://www.tandfonline.com/doi/abs/10.1080/00401706.1970.10488634) by Arthur Hoerl and Robert Kennard (Technometrics)
 | **[Publication]** [Regression Shrinkage and Selection Via the Lasso](https://rss.onlinelibrary.wiley.com/doi/abs/10.1111/j.2517-6161.1996.tb02080.x) by Rob Tibshirani (Journal of the Royal Statistical Society)

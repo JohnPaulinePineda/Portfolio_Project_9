@@ -490,7 +490,7 @@ Linear Regression - Ridge (PLR_R)</a></li>
 Linear Regression - Lasso (PLR_L)</a></li>
 <li><a href="#penalized-linear-regression---elasticnet-plr_e" id="toc-penalized-linear-regression---elasticnet-plr_e">1.5.4 Penalized
 Linear Regression - ElasticNet (PLR_E)</a></li>
-<li><a href="#principal-component-regression-pcr" id="toc-principal-component-regression-pcr">1.5.5 Principal Component
+<li><a href="#principal-components-regression-pcr" id="toc-principal-components-regression-pcr">1.5.5 Principal Components
 Regression (PCR)</a></li>
 <li><a href="#partial-least-squares-pls" id="toc-partial-least-squares-pls">1.5.6 Partial Least Squares
 (PLS)</a></li>
@@ -23486,10 +23486,20 @@ model is summarized as follows:<br />
 <pre><code>##  Rsquared 
 ## 0.8761762</code></pre>
 </div>
-<div id="principal-component-regression-pcr" class="section level3">
-<h3>1.5.5 Principal Component Regression (PCR)</h3>
+<div id="principal-components-regression-pcr" class="section level3">
+<h3>1.5.5 Principal Components Regression (PCR)</h3>
 <div class="line-block"><br />
-<strong>[A]</strong> The principal component regression model from the
+<a href="https://www.semanticscholar.org/paper/The-relations-of-the-newer-multivariate-statistical-Hotelling/f8b7eada549ed4dd9419d5a3202834d55f0f4748">Principal
+Components Regression</a> applies dimensionality reduction to address
+high multicollinearity among predictors in a linear regression. The
+algorithm calculates summary indices termed as principal components
+which are linear combinations of the original predictors by considering
+the magnitude of their variances. The method of least squares is then
+applied to fit a linear regression model using the first principal
+components as predictors, with the optimal number determined using
+cross-validation.<br />
+<br />
+<strong>[A]</strong> The principal components regression model from the
 <mark style="background-color: #CCECFF"><strong>pls</strong></mark>
 package was implemented through the
 <mark style="background-color: #CCECFF"><strong>caret</strong></mark>
@@ -23999,6 +24009,16 @@ model is summarized as follows:<br />
 <div id="partial-least-squares-pls" class="section level3">
 <h3>1.5.6 Partial Least Squares (PLS)</h3>
 <div class="line-block"><br />
+<a href="https://epubs.siam.org/doi/10.1137/0905052">Partial Least
+Squares</a> applies dimensionality reduction to address high
+multicollinearity among predictors in a linear regression. The algorithm
+calculates summary indices termed as partial least squares components
+which are linear combinations of the original predictors by considering
+the variation in both the response and the predictor variables. The
+method of least squares is then applied to fit a linear regression model
+using the first principal components as predictors, with the optimal
+number determined using cross-validation.<br />
+<br />
 <strong>[A]</strong> The partial least squares model from the
 <mark style="background-color: #CCECFF"><strong>pls</strong></mark>
 package was implemented through the
@@ -24524,6 +24544,18 @@ model is summarized as follows:<br />
 <div id="averaged-neural-network-avnn" class="section level3">
 <h3>1.5.7 Averaged Neural Network (AVNN)</h3>
 <div class="line-block"><br />
+<a href="https://www.cambridge.org/core/books/pattern-recognition-and-neural-networks/4E038249C9BAA06C8F4EE6F044D09C5C">Averaged
+Neural Networks</a> implement fitting of the same neural network model
+using different random number seeds. All the resulting models are used
+for prediction by averaging the model scores and translating to
+continuous responses. Neural networks are comprised of node layers,
+containing an input layer, one or more hidden layers, and an output
+layer. Each node, or artificial neuron, connects to another and has an
+associated weight and threshold. If the output of any individual node is
+above the specified threshold value, that node is activated, sending
+data to the next layer of the network. Otherwise, no data is passed
+along to the next layer of the network.<br />
+<br />
 <strong>[A]</strong> The averaged neural network model from the
 <mark style="background-color: #CCECFF"><strong>nnet</strong></mark>
 package was implemented through the
@@ -25027,6 +25059,20 @@ model is summarized as follows:<br />
 <div id="multivariate-adaptive-regression-splines-mars" class="section level3">
 <h3>1.5.8 Multivariate Adaptive Regression Splines (MARS)</h3>
 <div class="line-block"><br />
+<a href="https://www.jstor.org/stable/2241837">Multivariate Adaptive
+Regression Splines</a>, as a form of piecewise linear regression, adapts
+a solution to local data regions of similar linear response. Each of the
+local regions is expressed by a different basis function. Only the basis
+functions and the associated predictor variables that provide a sizeable
+contribution to the prediction are considered. The algorithm divides the
+dataset into pieces using points termed as knots which are identified by
+assessing each point for each predictor as a potential knot and creating
+a linear regression model using the candidate features. The point that
+is able to reduce the most error in the model is deemed to be the knot
+with the process repeated recursively. Regression functions are then
+fitted to each piece to form a hinge function. The optimal number of
+knots are determined using cross-validation.<br />
+<br />
 <strong>[A]</strong> The multivariate adaptive regression splines model
 from the
 <mark style="background-color: #CCECFF"><strong>earth</strong></mark>
@@ -25036,11 +25082,11 @@ package.<br />
 <br />
 <strong>[B]</strong> The model contains 2 hyperparameters:<br />
      <strong>[B.1]</strong> <span style="color: #FF0000">nprune</span> =
-number of terms made to vary across a range of values equal to 1 to
-5<br />
+number of model terms made to vary across a range of values equal to 5
+to 20<br />
      <strong>[B.2]</strong> <span style="color: #FF0000">degree</span> =
-product degree made to vary across a range of values equal to 5 to
-20<br />
+interaction degree made to vary across a range of values equal to 1 to
+5<br />
 <br />
 <strong>[C]</strong> The cross-validated model performance of the final
 model is summarized as follows:<br />
@@ -25532,6 +25578,15 @@ model is summarized as follows:<br />
 <h3>1.5.9 Support Vector Machine - Radial Basis Function Kernel
 (SVM_R)</h3>
 <div class="line-block"><br />
+<a href="http://www.cs.cmu.edu/~pakyan/compbio/references/Drucker_NIPS_1996.pdf">Support
+Vector Machine</a> plots each observation in an N-dimensional space
+corresponding to the number of features in the data set and finds a
+hyperplane that passes through the data while minimizing its distance
+with all the data points. The algorithm applies kernel transformation by
+mapping non-linearly separable data using the similarities between the
+points in a high-dimensional feature space for improved
+estimation.<br />
+<br />
 <strong>[A]</strong> The support vector machine (radial basis function
 kernel) model from the
 <mark style="background-color: #CCECFF"><strong>kernlab</strong></mark>
@@ -26034,6 +26089,15 @@ model is summarized as follows:<br />
 <div id="support-vector-machine---polynomial-kernel-svm_p" class="section level3">
 <h3>1.5.10 Support Vector Machine - Polynomial Kernel (SVM_P)</h3>
 <div class="line-block"><br />
+<a href="http://www.cs.cmu.edu/~pakyan/compbio/references/Drucker_NIPS_1996.pdf">Support
+Vector Machine</a> plots each observation in an N-dimensional space
+corresponding to the number of features in the data set and finds a
+hyperplane that passes through the data while minimizing its distance
+with all the data points. The algorithm applies kernel transformation by
+mapping non-linearly separable data using the similarities between the
+points in a high-dimensional feature space for improved
+estimation.<br />
+<br />
 <strong>[A]</strong> The support vector machine (polynomial kernel)
 model from the
 <mark style="background-color: #CCECFF"><strong>kernlab</strong></mark>
@@ -29677,14 +29741,43 @@ Brownlee<br />
 Graphs</a> by STHDA Team<br />
 <strong>[Article]</strong> <a href="https://machinelearningmastery.com/a-tour-of-machine-learning-algorithms/">A
 Tour of Machine Learning Algorithms</a> by Jason Brownlee<br />
+<strong>[Article]</strong> <a href="https://machinelearningcompass.com/machine_learning_models/linear_regression/">Linear
+Regression Explained, Step by Step</a> by Boris Giba<br />
+<strong>[Article]</strong> <a href="https://www.datacamp.com/tutorial/tutorial-ridge-lasso-elastic-net">Regularization
+in R Tutorial: Ridge, Lasso and Elastic Net</a> by Datacamp Team<br />
+<strong>[Article]</strong> <a href="http://sthda.com/english/articles/37-model-selection-essentials-in-r/153-penalized-regression-essentials-ridge-lasso-elastic-net">Penalized
+Regression Essentials: Ridge, Lasso &amp; Elastic Net</a> by STHDA
+Team<br />
+<strong>[Article]</strong> <a href="https://www.geeksforgeeks.org/lasso-vs-ridge-vs-elastic-net-ml/">Lasso
+vs Ridge vs Elastic Net | ML</a> by Geeks for Geeks Team<br />
+<strong>[Article]</strong> <a href="https://machinelearningcompass.com/machine_learning_models/ridge_regression/">Ridge
+Regression Explained, Step by Step</a> by Boris Giba<br />
+<strong>[Article]</strong> <a href="https://www.statology.org/ridge-regression/">Introduction to Ridge
+Regression</a> by Statology Team<br />
+<strong>[Article]</strong> <a href="https://machinelearningcompass.com/machine_learning_models/lasso_regression/">Lasso
+Regression Explained, Step by Step</a> by Boris Giba<br />
+<strong>[Article]</strong> <a href="https://www.statology.org/lasso-regression/">Introduction to Lasso
+Regression</a> by Statology Team<br />
+<strong>[Article]</strong> <a href="https://machinelearningcompass.com/machine_learning_models/elastic_net_regression/">https://machinelearningcompass.com/machine_learning_models/elastic_net_regression/</a>
+by Boris Giba<br />
 <strong>[Article]</strong> <a href="https://www.statology.org/multivariate-adaptive-regression-splines/">An
-Introduction to Multivariate Adaptive Regression Spliness</a> by
+Introduction to Multivariate Adaptive Regression Splines</a> by
 Statology Team<br />
 <strong>[Article]</strong> <a href="https://www.statology.org/principal-components-regression/">An
 Introduction to Principal Components Regression</a> by Statology
 Team<br />
 <strong>[Article]</strong> <a href="https://www.statology.org/partial-least-squares/">An Introduction
 to Partial Least Squares</a> by Statology Team<br />
+<strong>[Article]</strong> <a href="https://www.ibm.com/topics/knn#:~:text=The%20k-nearest%20neighbors%20algorithm%2C%20also%20known%20as%20KNN,about%20the%20grouping%20of%20an%20individual%20data%20point.">K-Nearest
+Neighbors Algorithm</a> by IBM Team<br />
+<strong>[Article]</strong> <a href="https://support.bccvl.org.au/support/solutions/articles/6000083204-classification-tree">Classification
+Tree</a> by BCCVL Team<br />
+<strong>[Article]</strong> <a href="https://support.bccvl.org.au/support/solutions/articles/6000083217-random-forest">Random
+Forest</a> by BCCVL Team<br />
+<strong>[Article]</strong> <a href="https://support.bccvl.org.au/support/solutions/articles/6000083200-artificial-neural-network">Artificial
+Neural Network</a> by BCCVL Team<br />
+<strong>[Article]</strong> <a href="https://www.geeksforgeeks.org/conditional-inference-trees-in-r-programming/">Conditional
+Inference Trees in R Programming</a> by Geeks for Geeks Team<br />
 <strong>[Article]</strong> <a href="https://cran.r-project.org/web/packages/Cubist/vignettes/cubist.html">Cubist
 Regression Models</a> by Max Kuhn<br />
 <strong>[Publication]</strong> <a href="https://www.tandfonline.com/doi/abs/10.1080/00401706.1970.10488634">Ridge
