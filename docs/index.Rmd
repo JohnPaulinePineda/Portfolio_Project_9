@@ -1050,7 +1050,7 @@ bwplot(Log_Solubility~Structure|Descriptor,
 ## 1.5 Predictive Model Development
 ###  1.5.1 Linear Regression (LR)
 |
-| [Linear Regression](https://link.springer.com/book/10.1007/978-1-4757-3462-1) details.
+| [Linear Regression](https://link.springer.com/book/10.1007/978-1-4757-3462-1) explores the linear relationship between a scalar response and one or more covariates by having the conditional mean of the dependent variable be an affine function of the independent variables. The relationship is modeled through a disturbance term which represents an unobserved random variable that adds noise. The algorithm is typically formulated from the data using the least squares method which seeks to estimate the coefficients by minimizing the squared residual function. The linear equation assigns one scale factor represented by a coefficient to each covariate and an additional coefficient called the intercept or the bias coefficient which gives the line an additional degree of freedom allowing to move up and down a two-dimensional plot.
 |
 | **[A]** The linear regression model from the  <mark style="background-color: #CCECFF">**stats**</mark> package was implemented through the <mark style="background-color: #CCECFF">**caret**</mark> package. 
 |
