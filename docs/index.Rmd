@@ -1050,6 +1050,8 @@ bwplot(Log_Solubility~Structure|Descriptor,
 ## 1.5 Predictive Model Development
 ###  1.5.1 Linear Regression (LR)
 |
+| [Linear Regression](https://link.springer.com/book/10.1007/978-1-4757-3462-1) details.
+|
 | **[A]** The linear regression model from the  <mark style="background-color: #CCECFF">**stats**</mark> package was implemented through the <mark style="background-color: #CCECFF">**caret**</mark> package. 
 |
 | **[B]** The model contains 1 hyperparameter:
@@ -1156,6 +1158,8 @@ LR_Test
 
 ###  1.5.2 Penalized Linear Regression - Ridge (PLR_R)
 |
+| [Ridge Regression](https://www.tandfonline.com/doi/abs/10.1080/00401706.1970.10488634) is a regression technique aimed at preventing overfitting in linear regression models when the model is too complex and fits the training data very closely, but performs poorly on new and unseen data. The algorithm adds a penalty term referred to as the L2 regularization to the linear regression cost function that is proportional to the square of the magnitude of the coefficients. This approach helps to reduce the magnitude of the coefficients in the model, which in turn can prevent overfitting and is especially helpful where there are many correlated predictor variables in the model.
+|
 | **[A]** The penalized linear regression (ridge) model from the  <mark style="background-color: #CCECFF">**elasticnet**</mark> package was implemented through the <mark style="background-color: #CCECFF">**caret**</mark> package. 
 |
 | **[B]** The model contains 1 hyperparameter:
@@ -1258,6 +1262,8 @@ PLR_R_Test
 
 ###  1.5.3 Penalized Linear Regression - Lasso (PLR_L)
 |
+| [Least Absolute Shrinkage and Selection Operator Regression](https://rss.onlinelibrary.wiley.com/doi/abs/10.1111/j.2517-6161.1996.tb02080.x) details.
+|
 | **[A]** The penalized linear regression (lasso) model from the  <mark style="background-color: #CCECFF">**elasticnet**</mark> package was implemented through the <mark style="background-color: #CCECFF">**caret**</mark> package.
 |
 | **[B]** The model contains 1 hyperparameter:
@@ -1358,7 +1364,9 @@ PLR_L_Test
 
 ```
 
-###  1.5.4 Penalized Linear Regression - ElasticNet (PLR_E)
+###  1.5.4 Penalized Linear Regression - Elastic Net (PLR_E)
+|
+| [Elastic Net Regression](https://rss.onlinelibrary.wiley.com/doi/10.1111/j.1467-9868.2005.00503.x) details.
 |
 | **[A]** The penalized linear regression (elasticnet) model from the  <mark style="background-color: #CCECFF">**elasticnet**</mark> package was implemented through the <mark style="background-color: #CCECFF">**caret**</mark> package. 
 |
