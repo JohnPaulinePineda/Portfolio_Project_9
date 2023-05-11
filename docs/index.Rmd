@@ -2565,7 +2565,7 @@ RF_Test
 
 ###  1.5.15 Cubist (CUB)
 |
-| [Cubist Regression](https://www.semanticscholar.org/paper/Learning-With-Continuous-Classes-Quinlan/ead572634c6f7253bf187a3e9a7dc87ae2e34258) is a rule-based model that is an extension of Quinlan’s M5 model tree. A tree is grown where the terminal leaves contain linear regression models. These models are based on the predictors used in previous splits. Also, there are intermediate linear models at each step of the tree. A prediction is made using the linear regression model at the terminal node of the tree, but is “smoothed” by taking into account the prediction from the linear model in the previous node of the tree (which also occurs recursively up the tree). The tree is reduced to a set of rules, which initially are paths from the top of the tree to the bottom. Rules are eliminated via pruning and/or combined for simplification. The Cubist model can also use a boosting-like scheme called committees where iterative model trees are created in sequence. Another innovation is about using nearest-neighbors to adjust the predictions from the rule-based model.
+| [Cubist Regression](https://www.semanticscholar.org/paper/Learning-With-Continuous-Classes-Quinlan/ead572634c6f7253bf187a3e9a7dc87ae2e34258) is a rule-based model that is an extension of Quinlan’s M5 model tree. A tree is grown where the terminal leaves contain linear regression models. These models are based on the predictors used in previous splits. Also, there are intermediate linear models at each step of the tree. A prediction is made using the linear regression model at the terminal node of the tree, but is smoothed by taking into account the prediction from the linear model in the previous node of the tree (which also occurs recursively up the tree). The tree is reduced to a set of rules, which initially are paths from the top of the tree to the bottom. Rules are eliminated via pruning and/or combined for simplification. The Cubist model can also use a boosting-like scheme called committees where iterative model trees are created in sequence. Another innovation is about using nearest-neighbors to adjust the predictions from the rule-based model.
 |
 | **[A]** The cubist model from the  <mark style="background-color: #CCECFF">**Cubist**</mark> package was implemented through the <mark style="background-color: #CCECFF">**caret**</mark> package. 
 |
@@ -2856,14 +2856,18 @@ print(RMSE_Summary, row.names=FALSE)
 | **[Article]** [Lattice Graphs](http://www.sthda.com/english/wiki/lattice-graphs) by STHDA Team
 | **[Article]** [A Tour of Machine Learning Algorithms](https://machinelearningmastery.com/a-tour-of-machine-learning-algorithms/) by Jason Brownlee
 | **[Article]** [Linear Regression Explained, Step by Step](https://machinelearningcompass.com/machine_learning_models/linear_regression/) by Boris Giba
+| **[Article]** [Linear Regression for Machine Learning](https://machinelearningmastery.com/linear-regression-for-machine-learning/) by Jason Brownlee
 | **[Article]** [Regularization in R Tutorial: Ridge, Lasso and Elastic Net](https://www.datacamp.com/tutorial/tutorial-ridge-lasso-elastic-net) by Datacamp Team
 | **[Article]** [Penalized Regression Essentials: Ridge, Lasso & Elastic Net](http://sthda.com/english/articles/37-model-selection-essentials-in-r/153-penalized-regression-essentials-ridge-lasso-elastic-net) by STHDA Team
 | **[Article]** [Lasso vs Ridge vs Elastic Net | ML](https://www.geeksforgeeks.org/lasso-vs-ridge-vs-elastic-net-ml/) by Geeks for Geeks Team
 | **[Article]** [Ridge Regression Explained, Step by Step](https://machinelearningcompass.com/machine_learning_models/ridge_regression/) by Boris Giba
+| **[Article]** [How to Develop Ridge Regression Models in Python](https://machinelearningmastery.com/ridge-regression-with-python/) by Jason Brownlee
 | **[Article]** [Introduction to Ridge Regression](https://www.statology.org/ridge-regression/) by Statology Team
 | **[Article]** [Lasso Regression Explained, Step by Step](https://machinelearningcompass.com/machine_learning_models/lasso_regression/) by Boris Giba
+| **[Article]** [How to Develop LASSO Regression Models in Python](https://machinelearningmastery.com/lasso-regression-with-python/) by Jason Brownlee
 | **[Article]** [Introduction to Lasso Regression](https://www.statology.org/lasso-regression/) by Statology Team
 | **[Article]** [Elastic Net Regression Explained, Step by Step](https://machinelearningcompass.com/machine_learning_models/elastic_net_regression/) by Boris Giba
+| **[Article]** [How to Develop Elastic Net Regression Models in Python](https://machinelearningmastery.com/elastic-net-regression-in-python/) by Jason Brownlee
 | **[Article]** [An Introduction to Multivariate Adaptive Regression Splines](https://www.statology.org/multivariate-adaptive-regression-splines/) by Statology Team
 | **[Article]** [An Introduction to Principal Components Regression](https://www.statology.org/principal-components-regression/) by Statology Team
 | **[Article]** [An Introduction to Partial Least Squares](https://www.statology.org/partial-least-squares/) by Statology Team
