@@ -26769,6 +26769,17 @@ model is summarized as follows:<br />
 <div id="k-nearest-neighbors-knn" class="section level3">
 <h3>1.5.11 K-Nearest Neighbors (KNN)</h3>
 <div class="line-block"><br />
+<a href="https://ieeexplore.ieee.org/document/1053964">K-Nearest
+Neighbors</a> use proximity to make predictions about the numeric
+response of an individual data point. The algorithm examines the values
+of a chosen number of data points surrounding a target data point given
+a distance-based similarity metric, in order to make a prediction about
+the estimated value of the data point. The process involves setting a
+value for the chosen number of neighbors, calculating the distance
+between the target point across all instances, sorting the calculated
+distances, obtaining the average of the top entries and returning the
+prediction for the target point.<br />
+<br />
 <strong>[A]</strong> The k-nearest neighbors model was implemented
 through the
 <mark style="background-color: #CCECFF"><strong>caret</strong></mark>
@@ -27243,6 +27254,18 @@ model is summarized as follows:<br />
 <div id="classification-and-regression-trees-cart" class="section level3">
 <h3>1.5.12 Classification and Regression Trees (CART)</h3>
 <div class="line-block"><br />
+<a href="https://www.semanticscholar.org/paper/Classification-and-Regression-Trees-Breiman-Friedman/8017699564136f93af21575810d557dba1ee6fc6">Classification
+and Regression Trees</a> construct binary trees for both both nominal
+and continuous input attributes using Gini Index as its splitting
+criteria. The algorithm handles missing values by surrogating tests to
+approximate outcomes. In the pruning phase, CART uses pre-pruning
+technique called Cost-Complexity pruning to remove redundant branches
+from the decision tree to improve the accuracy. In the first stage, a
+sequence of increasingly smaller trees are built on the training data.
+In the second stage, one of these tree is chosen as the pruned tree,
+based on its prediction accuracy on a pruning set, adopting a
+cross-validated method in its pruning technique.<br />
+<br />
 <strong>[A]</strong> The classification and regression trees model from
 the
 <mark style="background-color: #CCECFF"><strong>rpart</strong></mark>
@@ -27803,6 +27826,19 @@ model is summarized as follows:<br />
 <div id="conditional-inference-trees-ctree" class="section level3">
 <h3>1.5.13 Conditional Inference Trees (CTREE)</h3>
 <div class="line-block"><br />
+<a href="https://www.tandfonline.com/doi/abs/10.1198/106186006X133933">Conditional
+Inference Trees</a> use recursive partitioning of features based on the
+value of correlations in conditional inference framework - compensating
+against overfitting and a selection bias towards features with many
+possible splits or missing values thus avoiding biasing and
+vulnerability to the errors making the method more flexible for the
+problems in the data. The algorithm applies a significance test which is
+a permutation test that selects input features to split and recurse,
+calculating the p-value in the process. The distribution of the test
+statistic under the null hypothesis is obtained by calculating all
+possible values of the test statistic under rearrangements of the
+classes on the observed data points.<br />
+<br />
 <strong>[A]</strong> The conditional inference trees model from the
 <mark style="background-color: #CCECFF"><strong>party</strong></mark>
 package was implemented through the
@@ -28395,6 +28431,18 @@ model is summarized as follows:<br />
 <div id="random-forest-rf" class="section level3">
 <h3>1.5.14 Random Forest (RF)</h3>
 <div class="line-block"><br />
+<a href="https://link.springer.com/article/10.1023/A:1010933404324">Random
+Forest</a> is an ensemble learning method made up of a large set of
+small decision trees called estimators, with each producing its own
+prediction. The random forest model aggregates the predictions of the
+estimators to produce a more accurate prediction. The algorithm involves
+bootstrap aggregating (where smaller subsets of the training data are
+repeatedly subsampled with replacement), random subspacing (where a
+subset of features are sampled and used to train each individual
+estimator), estimator training (where unpruned decision trees are
+formulated for each estimator) and inference by aggregating the
+predictions of all estimators.<br />
+<br />
 <strong>[A]</strong> The random forest model from the
 <mark style="background-color: #CCECFF"><strong>randomForest</strong></mark>
 package was implemented through the
