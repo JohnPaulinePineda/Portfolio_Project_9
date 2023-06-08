@@ -523,9 +523,23 @@ References</strong></a></li>
 <div id="table-of-contents" class="section level1">
 <h1><strong>1. Table of Contents</strong></h1>
 <div class="line-block"><br />
-This document presents a non-exhaustive list of modelling techniques for
-predicting numeric responses using various helpful packages in
-<mark style="background-color: #CCECFF"><strong>R</strong></mark>.<br />
+This project implements different predictive modelling procedures for
+numeric responses using various helpful packages in
+<mark style="background-color: #CCECFF"><strong>R</strong></mark>.
+Models applied in the analysis to predict numeric responses included the
+<strong>Linear Regression</strong>, <strong>Penalized Regression (Ridge,
+Least Absolute Shrinkage and Selection Operator, ElasticNet)</strong>,
+<strong>Principal Component Regression</strong>, <strong>Partial Least
+Squares</strong>, <strong>Averaged Neural Network</strong>,
+<strong>Multivariate Adaptive Regression Splines</strong>,
+<strong>Support Vector Machine (Radial Basis Function Kernel, Polynomial
+Kernel)</strong>, <strong>K-Nearest Neighbors</strong>,
+<strong>Classification and Regression Trees</strong>,
+<strong>Conditional Inference Trees</strong>, <strong>Random
+Forest</strong> and <strong>Cubist</strong> algorithms. The resulting
+predictions derived from the candidate models were evaluated in terms of
+their model fit using the r-squared and root mean squred error (RMSE)
+metrics.<br />
 <br />
 Regression learning refers to a predictive modelling problem where
 numerical continuous responses are predicted for a given sample of input
@@ -29574,36 +29588,44 @@ Model performance comparison:<br />
 <br />
 <strong>[A]</strong> The models which demonstrated the best and most
 consistent r-squared and RMSE metrics are as follows:<br />
-     <strong>[A.1]</strong> CUB: Cubist
+     <strong>[A.1]</strong> <strong>CUB: Cubist</strong>
 (<mark style="background-color: #CCECFF"><strong>Cubist</strong></mark>
 package)<br />
             <strong>[A.1.1]</strong> Cross-Validation R-Squared =
-0.92538, Test R-Squared = 0.90717<br />
-            <strong>[A.1.2]</strong> Cross-Validation RMSE = 0.55645,
-Test RMSE = 0.63809<br />
-     <strong>[A.2]</strong> SVM_R: Support Vector Machine - Radial Basis
-Function Kernel
+0.92538<br />
+            <strong>[A.1.2]</strong> Test R-Squared = 0.90717<br />
+            <strong>[A.1.3]</strong> Cross-Validation RMSE =
+0.55645<br />
+            <strong>[A.1.4]</strong> Test RMSE = 0.63809<br />
+     <strong>[A.2]</strong> <strong>SVM_R: Support Vector Machine -
+Radial Basis Function Kernel</strong>
 (<mark style="background-color: #CCECFF"><strong>kernlab</strong></mark>
 package)<br />
             <strong>[A.2.1]</strong> Cross-Validation R-Squared =
-0.91551, Test R-Squared = 0.90989<br />
-            <strong>[A.2.2]</strong> Cross-Validation RMSE = 0.59505,
-Test RMSE = 0.62742<br />
-     <strong>[A.3]</strong> SVM_R: Support Vector Machine - Polynomial
-Kernel
+0.91551<br />
+            <strong>[A.2.2]</strong> Test R-Squared = 0.90989<br />
+            <strong>[A.2.3]</strong> Cross-Validation RMSE =
+0.59505<br />
+            <strong>[A.2.4]</strong> Test RMSE = 0.62742<br />
+     <strong>[A.3]</strong> <strong>SVM_P: Support Vector Machine -
+Polynomial Kernel</strong>
 (<mark style="background-color: #CCECFF"><strong>kernlab</strong></mark>
 package)<br />
             <strong>[A.3.1]</strong> Cross-Validation R-Squared =
-0.91167, Test R-Squared = 0.90623<br />
-            <strong>[A.3.2]</strong> Cross-Validation RMSE = 0.59505,
-Test RMSE = 0.63778<br />
-     <strong>[A.4]</strong> RF: Random Forest
+0.91167<br />
+            <strong>[A.3.2]</strong> Test R-Squared = 0.90623<br />
+            <strong>[A.3.3]</strong> Cross-Validation RMSE =
+0.59505<br />
+            <strong>[A.3.4]</strong> Test RMSE = 0.63778<br />
+     <strong>[A.4]</strong> <strong>RF: Random Forest</strong>
 (<mark style="background-color: #CCECFF"><strong>randomForest</strong></mark>
 package)<br />
             <strong>[A.4.1]</strong> Cross-Validation R-Squared =
-0.90098, Test R-Squared = 0.90057<br />
-            <strong>[A.4.2]</strong> Cross-Validation RMSE = 0.65419,
-Test RMSE = 0.65571<br />
+0.90098<br />
+            <strong>[A.4.2]</strong> Test R-Squared = 0.90057<br />
+            <strong>[A.4.3]</strong> Cross-Validation RMSE =
+0.65419<br />
+            <strong>[A.4.4]</strong> Test RMSE = 0.65571<br />
 </div>
 <div class="sourceCode" id="cb400"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb400-1"><a href="#cb400-1" aria-hidden="true" tabindex="-1"></a><span class="do">##################################</span></span>
 <span id="cb400-2"><a href="#cb400-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Consolidating all evaluation results</span></span>
