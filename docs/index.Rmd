@@ -35,6 +35,9 @@ knitr::opts_chunk$set(echo = TRUE, fig.width=15, fig.height=10)
 |      **[B.2]** 228/229 predictors = All remaining variables (208/228 factor + 20/228 numeric)
 |     
 | 
+
+<details><summary><mark style="background-color: #000000;color: #FFFFFF">**Code Chunk | Output**</mark></summary>
+
 ```{r section_1.1, warning=FALSE, message=FALSE}
 ##################################
 # Loading R libraries
@@ -100,6 +103,8 @@ PDA <- Solubility_Train
 )
 ```
 
+</details>
+
 ##  1.2 Data Quality Assessment
 |
 | Data quality assessment:
@@ -129,6 +134,10 @@ PDA <- Solubility_Train
 |      **[D.2]** <span style="color: #FF0000">NumChlorine</span> variable (numeric)
 |      **[D.3]** <span style="color: #FF0000">HydrophilicFactor</span> variable (numeric)
 |
+| 
+
+<details><summary><mark style="background-color: #000000;color: #FFFFFF">**Code Chunk | Output**</mark></summary>
+
 ```{r section_1.2, warning=FALSE, message=FALSE}
 ##################################
 # Loading dataset
@@ -346,6 +355,8 @@ if (length(names(DQA.Predictors.Numeric))==0) {
 
 ```
 
+</details>
+
 ##  1.3 Data Preprocessing
 
 ###  1.3.1 Outlier
@@ -374,6 +385,10 @@ if (length(names(DQA.Predictors.Numeric))==0) {
 |      **[A.19]** <span style="color: #FF0000">SurfaceArea1</span> variable (19 outliers detected)
 |      **[A.20]** <span style="color: #FF0000">SurfaceArea2</span> variable (12 outliers detected)
 |
+| 
+
+<details><summary><mark style="background-color: #000000;color: #FFFFFF">**Code Chunk | Output**</mark></summary>
+
 ```{r section_1.3.1, warning=FALSE, message=FALSE, fig.width=15, fig.height=3}
 ##################################
 # Loading dataset
@@ -425,6 +440,8 @@ dim(DPA.Predictors.Numeric)
 
 ```
 
+</details>
+
 ###  1.3.2 Zero and Near-Zero Variance
 |
 | Zero and near-zero variance data assessment:
@@ -436,6 +453,10 @@ dim(DPA.Predictors.Numeric)
 |      **[B.2]** <span style="color: #FF0000">FP199</span> variable (factor)
 |      **[B.3]** <span style="color: #FF0000">FP200</span> variable (factor)
 |
+| 
+
+<details><summary><mark style="background-color: #000000;color: #FFFFFF">**Code Chunk | Output**</mark></summary>
+
 ```{r section_1.3.2, warning=FALSE, message=FALSE}
 ##################################
 # Loading dataset
@@ -502,6 +523,8 @@ dim(DPA_ExcludedLowVariance)
 
 ```
 
+</details>
+
 ###  1.3.3 Collinearity
 |
 | High collinearity data assessment:
@@ -511,6 +534,10 @@ dim(DPA_ExcludedLowVariance)
 |      **[A.2]** <span style="color: #FF0000">NumMultBonds</span> and <span style="color: #FF0000">NumAromaticBonds</span> variables (numeric)
 |      **[A.3]** <span style="color: #FF0000">NumAtoms</span> and <span style="color: #FF0000">NumBonds</span> variables (numeric)
 |
+| 
+
+<details><summary><mark style="background-color: #000000;color: #FFFFFF">**Code Chunk | Output**</mark></summary>
+
 ```{r section_1.3.3, warning=FALSE, message=FALSE}
 ##################################
 # Loading dataset
@@ -610,6 +637,8 @@ dim(DPA_ExcludedHighCorrelation)
 
 ```
 
+</details>
+
 ###  1.3.4 Linear Dependencies
 |
 | Linear dependency data assessment:
@@ -627,6 +656,10 @@ dim(DPA_ExcludedHighCorrelation)
 |      **[C.2]** <span style="color: #FF0000">NumAtoms</span> variable (numeric)
 |      **[C.3]** <span style="color: #FF0000">NumNonHAtoms</span> variable (numeric)
 |
+| 
+
+<details><summary><mark style="background-color: #000000;color: #FFFFFF">**Code Chunk | Output**</mark></summary>
+
 ```{r section_1.3.4, warning=FALSE, message=FALSE}
 ##################################
 # Loading dataset
@@ -707,12 +740,18 @@ dim(DPA_ExcludedLinearlyDependent)
 
 ```
 
+</details>
+
 ###  1.3.5 Shape Transformation
 |
 | Data transformation assessment:
 |
 | **[A]** A number of numeric variables in the dataset were observed to be right-skewed which required shape transformation for data distribution stability. Considering that all numeric variables were strictly positive values, the <span style="color: #0000FF">BoxCox</span> method from the <mark style="background-color: #CCECFF">**caret**</mark> package was used to transform their distributional shapes.
 |
+| 
+
+<details><summary><mark style="background-color: #000000;color: #FFFFFF">**Code Chunk | Output**</mark></summary>
+
 ```{r section_1.3.5, warning=FALSE, message=FALSE}
 ##################################
 # Loading dataset
@@ -747,12 +786,18 @@ dim(DPA_BoxCoxTransformed)
 
 ```
 
+</details>
+
 ###  1.3.6 Centering and Scaling
 |
 | Centering and scaling data assessment:
 |
 | **[A]** To maintain numerical stability during modelling, centering and scaling transformations were applied on the transformed numeric variables. The <span style="color: #0000FF">center</span> method from the <mark style="background-color: #CCECFF">**caret**</mark> package was implemented which subtracts the average value of a numeric variable to all the values. As a result of centering, the variables had zero mean values. In addition, the <span style="color: #0000FF">scale</span> method, also from the <mark style="background-color: #CCECFF">**caret**</mark> package, was applied which performs a center transformation with each value of the variable divided by its standard deviation. Scaling the data coerced the values to have a common standard deviation of one.
 |
+| 
+
+<details><summary><mark style="background-color: #000000;color: #FFFFFF">**Code Chunk | Output**</mark></summary>
+
 ```{r section_1.3.6, warning=FALSE, message=FALSE}
 ##################################
 # Loading dataset
@@ -793,6 +838,8 @@ dim(DPA.Predictors.Numeric_BoxCoxTransformed_CenteredScaledTransformed)
 
 ```
 
+</details>
+
 ###  1.3.7 Pre-Processed Dataset
 |
 | Preliminary dataset assessment:
@@ -812,6 +859,10 @@ dim(DPA.Predictors.Numeric_BoxCoxTransformed_CenteredScaledTransformed)
 |      **[C.4]** 3 predictors removed due to high correlation
 |      **[C.5]** 2 predictors removed due to linear dependencies
 | 
+| 
+
+<details><summary><mark style="background-color: #000000;color: #FFFFFF">**Code Chunk | Output**</mark></summary>
+
 ```{r section_1.3.7, warning=FALSE, message=FALSE}
 ##################################
 # Creating the pre-modelling
@@ -881,6 +932,8 @@ dim(PMA_PreModelling_Test)
 
 ```
 
+</details>
+
 ## 1.4 Data Exploration
 |
 | Exploratory data analysis:
@@ -911,6 +964,10 @@ dim(PMA_PreModelling_Test)
 |      **[B.16]** <span style="color: #FF0000">FP014</span> variable (factor)
 |      **[B.17]** <span style="color: #FF0000">FP013</span> variable (factor)
 |
+| 
+
+<details><summary><mark style="background-color: #000000;color: #FFFFFF">**Code Chunk | Output**</mark></summary>
+
 ```{r section_1.4, warning=FALSE, message=FALSE}
 ##################################
 # Loading dataset
@@ -1047,6 +1104,8 @@ bwplot(Log_Solubility~Structure|Descriptor,
 
 ```
 
+</details>
+
 ## 1.5 Predictive Model Development
 ###  1.5.1 Linear Regression (LR)
 |
@@ -1073,6 +1132,10 @@ bwplot(Log_Solubility~Structure|Descriptor,
 |      **[E.1]** Root-Mean-Square Error = 0.77258
 |      **[E.2]** R-Squared = 0.86439
 |
+| 
+
+<details><summary><mark style="background-color: #000000;color: #FFFFFF">**Code Chunk | Output**</mark></summary>
+
 ```{r section_1.5.1, warning=FALSE, message=FALSE}
 ##################################
 # Creating a local object
@@ -1156,6 +1219,8 @@ LR_Test
 
 ```
 
+</details>
+
 ###  1.5.2 Penalized Linear Regression - Ridge (PLR_R)
 |
 | [Ridge Regression](https://www.tandfonline.com/doi/abs/10.1080/00401706.1970.10488634) is a regression technique aimed at preventing overfitting in linear regression models when the model is too complex and fits the training data very closely, but performs poorly on new and unseen data. The algorithm adds a penalty term (referred to as the L2 regularization) to the linear regression cost function that is proportional to the square of the magnitude of the coefficients. This approach helps to reduce the magnitude of the coefficients in the model, which in turn can prevent overfitting and is especially helpful where there are many correlated predictor variables in the model. A hyperparameter lambda that controls the weighting of the L2 regularization to the loss function needs to be optimized through cross-validation.
@@ -1176,6 +1241,10 @@ LR_Test
 |      **[E.1]** Root-Mean-Square Error = 0.74148
 |      **[E.2]** R-Squared = 0.87517
 |
+| 
+
+<details><summary><mark style="background-color: #000000;color: #FFFFFF">**Code Chunk | Output**</mark></summary>
+
 ```{r section_1.5.2, warning=FALSE, message=FALSE}
 ##################################
 # Transforming factor predictors
@@ -1260,6 +1329,8 @@ PLR_R_Test
 
 ```
 
+</details>
+
 ###  1.5.3 Penalized Linear Regression - Lasso (PLR_L)
 |
 | [Least Absolute Shrinkage and Selection Operator Regression](https://rss.onlinelibrary.wiley.com/doi/abs/10.1111/j.2517-6161.1996.tb02080.x) is a regression technique aimed at preventing overfitting in linear regression models when the model is too complex and fits the training data very closely, but performs poorly on new and unseen data. The algorithm adds a penalty term (referred to as the L1 regularization) to the linear regression cost function that is proportional to the absolute value of the coefficients. This approach can be useful for feature selection, as it tends to shrink the coefficients of less important predictor variables to zero, which can help simplify the model and improve its interpretability. A hyperparameter fraction that controls the ratio of the L1 norm of the coefficient vector relative to the norm at the full solution needs to be optimized through cross-validation.
@@ -1280,6 +1351,10 @@ PLR_R_Test
 |      **[E.1]** Root-Mean-Square Error = 0.73891
 |      **[E.2]** R-Squared = 0.87468
 |
+| 
+
+<details><summary><mark style="background-color: #000000;color: #FFFFFF">**Code Chunk | Output**</mark></summary>
+
 ```{r section_1.5.3, warning=FALSE, message=FALSE}
 ##################################
 # Transforming factor predictors
@@ -1364,6 +1439,8 @@ PLR_L_Test
 
 ```
 
+</details>
+
 ###  1.5.4 Penalized Linear Regression - Elastic Net (PLR_E)
 |
 | [Elastic Net Regression](https://rss.onlinelibrary.wiley.com/doi/10.1111/j.1467-9868.2005.00503.x) is a regression technique aimed at preventing overfitting in linear regression models when the model is too complex and fits the training data very closely, but performs poorly on new and unseen data. The algorithm is a combination of the ridge and LASSO regression methods, by adding both L1 and L2 regularization terms in the cost function. This approach can be useful when there are many predictor variables that are correlated with the response variable, but only a subset of them are truly important for predicting the response. The L1 regularization term can help to select the important variables, while the L2 regularization term can help to reduce the magnitude of the coefficients. Hyperparameters lambda that controls the weighting of the L2 regularization to the loss function, and fraction that controls the ratio of the L1 norm of the coefficient vector relative to the norm at the full solution needs to be optimized through cross-validation.
@@ -1385,6 +1462,10 @@ PLR_L_Test
 |      **[E.1]** Root-Mean-Square Error = 0.73519
 |      **[E.2]** R-Squared = 0.87618
 |
+| 
+
+<details><summary><mark style="background-color: #000000;color: #FFFFFF">**Code Chunk | Output**</mark></summary>
+
 ```{r section_1.5.4, warning=FALSE, message=FALSE}
 ##################################
 # Transforming factor predictors
@@ -1472,6 +1553,8 @@ PLR_E_Test
 
 ```
 
+</details>
+
 ###  1.5.5 Principal Components Regression (PCR)
 |
 | [Principal Components Regression](https://www.semanticscholar.org/paper/The-relations-of-the-newer-multivariate-statistical-Hotelling/f8b7eada549ed4dd9419d5a3202834d55f0f4748) applies dimensionality reduction to address high multicollinearity among predictors in a linear regression. The algorithm calculates summary indices termed as principal components which are linear combinations of the original predictors by considering the magnitude of their variances. The method of least squares is then applied to fit a linear regression model using the first principal components as predictors, with the optimal number determined using cross-validation.
@@ -1492,6 +1575,10 @@ PLR_E_Test
 |      **[E.1]** Root-Mean-Square Error = 0.84483
 |      **[E.2]** R-Squared = 0.83516
 |
+| 
+
+<details><summary><mark style="background-color: #000000;color: #FFFFFF">**Code Chunk | Output**</mark></summary>
+
 ```{r section_1.5.5, warning=FALSE, message=FALSE}
 ##################################
 # Creating a local object
@@ -1570,6 +1657,8 @@ PCR_Test
 
 ```
 
+</details>
+
 ###  1.5.6 Partial Least Squares (PLS)
 |
 | [Partial Least Squares](https://epubs.siam.org/doi/10.1137/0905052) applies dimensionality reduction to address high multicollinearity among predictors in a linear regression. The algorithm calculates summary indices termed as partial least squares components which are linear combinations of the original predictors by considering the variation in both the response and the predictor variables. The method of least squares is then applied to fit a linear regression model using the first principal components as predictors, with the optimal number determined using cross-validation.
@@ -1595,6 +1684,10 @@ PCR_Test
 |      **[E.1]** Root-Mean-Square Error = 0.76473
 |      **[E.2]** R-Squared = 0.86706
 |
+| 
+
+<details><summary><mark style="background-color: #000000;color: #FFFFFF">**Code Chunk | Output**</mark></summary>
+
 ```{r section_1.5.6, warning=FALSE, message=FALSE}
 ##################################
 # Creating a local object
@@ -1680,6 +1773,8 @@ PLS_Test
 
 ```
 
+</details>
+
 ###  1.5.7 Averaged Neural Network (AVNN)
 |
 | [Averaged Neural Networks](https://www.cambridge.org/core/books/pattern-recognition-and-neural-networks/4E038249C9BAA06C8F4EE6F044D09C5C) implement fitting of the same neural network model using different random number seeds. All the resulting models are used for prediction by averaging the model scores and translating to continuous responses. Neural networks are comprised of node layers, containing an input layer, one or more hidden layers, and an output layer. Each node, or artificial neuron, connects to another and has an associated weight and threshold. If the output of any individual node is above the specified threshold value, that node is activated, sending data to the next layer of the network. Otherwise, no data is passed along to the next layer of the network.
@@ -1702,6 +1797,10 @@ PLS_Test
 |      **[E.1]** Root-Mean-Square Error = 0.98624
 |      **[E.2]** R-Squared = 0.78293
 |
+| 
+
+<details><summary><mark style="background-color: #000000;color: #FFFFFF">**Code Chunk | Output**</mark></summary>
+
 ```{r section_1.5.7, warning=FALSE, message=FALSE}
 ##################################
 # Transforming factor predictors
@@ -1796,6 +1895,8 @@ AVNN_Test
 
 ```
 
+</details>
+
 ###  1.5.8 Multivariate Adaptive Regression Splines (MARS)
 |
 | [Multivariate Adaptive Regression Splines](https://www.jstor.org/stable/2241837), as a form of piecewise linear regression, adapts a solution to local data regions of similar linear response. Each of the local regions is expressed by a different basis function. Only the basis functions and the associated predictor variables that provide a sizeable contribution to the prediction are considered. The algorithm divides the dataset into pieces using points termed as knots which are identified by assessing each point for each predictor as a potential knot and creating a linear regression model using the candidate features. The point that is able to reduce the most error in the model is deemed to be the knot with the process repeated recursively. Regression functions are then fitted to each piece to form a hinge function. The optimal number of knots are determined using cross-validation.
@@ -1822,6 +1923,10 @@ AVNN_Test
 |      **[E.1]** Root-Mean-Square Error = 0.75804
 |      **[E.2]** R-Squared = 0.86891
 |
+| 
+
+<details><summary><mark style="background-color: #000000;color: #FFFFFF">**Code Chunk | Output**</mark></summary>
+
 ```{r section_1.5.8, warning=FALSE, message=FALSE}
 ##################################
 # Creating a local object
@@ -1909,6 +2014,8 @@ MARS_Test
 
 ```
 
+</details>
+
 ###  1.5.9 Support Vector Machine - Radial Basis Function Kernel (SVM_R)
 |
 | [Support Vector Machine](http://www.cs.cmu.edu/~pakyan/compbio/references/Drucker_NIPS_1996.pdf) plots each observation in an N-dimensional space corresponding to the number of features in the data set and finds a hyperplane that passes through the data while minimizing its distance with all the data points. The algorithm applies kernel transformation by mapping non-linearly separable data using the similarities between the points in a high-dimensional feature space for improved estimation.
@@ -1930,6 +2037,10 @@ MARS_Test
 |      **[E.1]** Root-Mean-Square Error = 0.62742
 |      **[E.2]** R-Squared = 0.90989
 |
+| 
+
+<details><summary><mark style="background-color: #000000;color: #FFFFFF">**Code Chunk | Output**</mark></summary>
+
 ```{r section_1.5.9, warning=FALSE, message=FALSE}
 ##################################
 # Transforming factor predictors
@@ -2014,6 +2125,8 @@ SVM_R_Test
 
 ```
 
+</details>
+
 ###  1.5.10 Support Vector Machine - Polynomial Kernel (SVM_P)
 |
 | [Support Vector Machine](http://www.cs.cmu.edu/~pakyan/compbio/references/Drucker_NIPS_1996.pdf) plots each observation in an N-dimensional space corresponding to the number of features in the data set and finds a hyperplane that passes through the data while minimizing its distance with all the data points. The algorithm applies kernel transformation by mapping non-linearly separable data using the similarities between the points in a high-dimensional feature space for improved estimation.
@@ -2036,6 +2149,10 @@ SVM_R_Test
 |      **[E.1]** Root-Mean-Square Error = 0.63778
 |      **[E.2]** R-Squared = 0.90623
 |
+| 
+
+<details><summary><mark style="background-color: #000000;color: #FFFFFF">**Code Chunk | Output**</mark></summary>
+
 ```{r section_1.5.10, warning=FALSE, message=FALSE}
 ##################################
 # Transforming factor predictors
@@ -2126,6 +2243,8 @@ SVM_P_Test
 
 ```
 
+</details>
+
 ###  1.5.11 K-Nearest Neighbors (KNN)
 |
 | [K-Nearest Neighbors](https://ieeexplore.ieee.org/document/1053964) use proximity to make predictions about the numeric response of an individual data point. The algorithm examines the values of a chosen number of data points surrounding a target data point given a distance-based similarity metric, in order to make a prediction about the estimated value of the data point. The process involves setting a value for the chosen number of neighbors, calculating the distance between the target point across all instances, sorting the calculated distances, obtaining the average of the top entries and returning the prediction for the target point.
@@ -2146,6 +2265,10 @@ SVM_P_Test
 |      **[E.1]** Root-Mean-Square Error = 1.12471
 |      **[E.2]** R-Squared = 0.71373
 |
+| 
+
+<details><summary><mark style="background-color: #000000;color: #FFFFFF">**Code Chunk | Output**</mark></summary>
+
 ```{r section_1.5.11, warning=FALSE, message=FALSE}
 ##################################
 # Transforming factor predictors
@@ -2230,6 +2353,8 @@ KNN_Test
 
 ```
 
+</details>
+
 ###  1.5.12 Classification and Regression Trees (CART)
 |
 | [Classification and Regression Trees](https://www.semanticscholar.org/paper/Classification-and-Regression-Trees-Breiman-Friedman/8017699564136f93af21575810d557dba1ee6fc6) construct binary trees for both both nominal and continuous input attributes using Gini Index as its splitting criteria. The algorithm handles missing values by surrogating tests to approximate outcomes. In the pruning phase, CART uses pre-pruning technique called Cost-Complexity pruning to remove redundant branches from the decision tree to improve the accuracy. In the first stage, a sequence of increasingly smaller trees are built on the training data. In the second stage, one of these tree is chosen as the pruned tree, based on its prediction accuracy on a pruning set, adopting a cross-validated method in its pruning technique.
@@ -2255,6 +2380,10 @@ KNN_Test
 |      **[E.1]** Root-Mean-Square Error = 0.91946
 |      **[E.2]** R-Squared = 0.80707
 |
+| 
+
+<details><summary><mark style="background-color: #000000;color: #FFFFFF">**Code Chunk | Output**</mark></summary>
+
 ```{r section_1.5.12, warning=FALSE, message=FALSE}
 ##################################
 # Creating a local object
@@ -2340,6 +2469,8 @@ CART_Test
 
 ```
 
+</details>
+
 ###  1.5.13 Conditional Inference Trees (CTREE)
 |
 | [Conditional Inference Trees](https://www.tandfonline.com/doi/abs/10.1198/106186006X133933) use recursive partitioning of features based on the value of correlations in  conditional inference framework - compensating against overfitting and a selection bias towards features with many possible splits or missing values thus avoiding biasing and vulnerability to the errors making the method more flexible for the problems in the data. The algorithm applies a significance test which is a permutation test that selects input features to split and recurse, calculating the p-value in the process. The distribution of the test statistic under the null hypothesis is obtained by calculating all possible values of the test statistic under rearrangements of the classes on the observed data points.
@@ -2365,6 +2496,10 @@ CART_Test
 |      **[E.1]** Root-Mean-Square Error = 1.11601
 |      **[E.2]** R-Squared = 0.73109
 |
+| 
+
+<details><summary><mark style="background-color: #000000;color: #FFFFFF">**Code Chunk | Output**</mark></summary>
+
 ```{r section_1.5.13, warning=FALSE, message=FALSE}
 ##################################
 # Creating a local object
@@ -2450,6 +2585,7 @@ CTREE_Test
 
 ```
 
+</details>
 
 ###  1.5.14 Random Forest (RF)
 |
@@ -2476,6 +2612,10 @@ CTREE_Test
 |      **[E.1]** Root-Mean-Square Error = 0.65571
 |      **[E.2]** R-Squared = 0.90057
 |
+| 
+
+<details><summary><mark style="background-color: #000000;color: #FFFFFF">**Code Chunk | Output**</mark></summary>
+
 ```{r section_1.5.14, warning=FALSE, message=FALSE}
 ##################################
 # Creating a local object
@@ -2563,6 +2703,8 @@ RF_Test
 
 ```
 
+</details>
+
 ###  1.5.15 Cubist (CUB)
 |
 | [Cubist Regression](https://www.semanticscholar.org/paper/Learning-With-Continuous-Classes-Quinlan/ead572634c6f7253bf187a3e9a7dc87ae2e34258) is a rule-based model that is an extension of Quinlan’s M5 model tree. A tree is grown where the terminal leaves contain linear regression models. These models are based on the predictors used in previous splits. Also, there are intermediate linear models at each step of the tree. A prediction is made using the linear regression model at the terminal node of the tree, but is smoothed by taking into account the prediction from the linear model in the previous node of the tree (which also occurs recursively up the tree). The tree is reduced to a set of rules, which initially are paths from the top of the tree to the bottom. Rules are eliminated via pruning and/or combined for simplification. The Cubist model can also use a boosting-like scheme called committees where iterative model trees are created in sequence. Another innovation is about using nearest-neighbors to adjust the predictions from the rule-based model.
@@ -2589,6 +2731,10 @@ RF_Test
 |      **[E.1]** Root-Mean-Square Error = 0.63809
 |      **[E.2]** R-Squared = 0.90717
 |
+| 
+
+<details><summary><mark style="background-color: #000000;color: #FFFFFF">**Code Chunk | Output**</mark></summary>
+
 ```{r section_1.5.15, warning=FALSE, message=FALSE}
 ##################################
 # Transforming factor predictors
@@ -2684,6 +2830,8 @@ CUB_Test
 
 ```
 
+</details>
+
 ##  1.6 Model Evaluation Summary
 |
 | Model performance comparison:
@@ -2710,6 +2858,10 @@ CUB_Test
 |             **[A.4.3]** Cross-Validation RMSE = 0.65419
 |             **[A.4.4]** Test RMSE = 0.65571
 |
+| 
+
+<details><summary><mark style="background-color: #000000;color: #FFFFFF">**Code Chunk | Output**</mark></summary>
+
 ```{r section_1.6, warning=FALSE, message=FALSE}
 ##################################
 # Consolidating all evaluation results
@@ -2821,6 +2973,8 @@ print(RMSE_Summary, row.names=FALSE)
                       pch = 16,
                       cex = 2))
 ```
+
+</details>
 
 # **2. References**
 |
