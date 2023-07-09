@@ -1,5 +1,5 @@
 ---
-title: 'R : Modelling Numeric Responses for Prediction'
+title: 'Supervised Learning : Modelling Numeric Responses for Prediction'
 author: "John Pauline Pineda"
 date: "November 29, 2022"
 output: 
