@@ -16,7 +16,7 @@ knitr::opts_chunk$set(echo = TRUE, fig.width=15, fig.height=10)
 ```
 # **1. Table of Contents**
 |
-| This project implements different predictive modelling procedures for numeric responses using various helpful packages in <mark style="background-color: #CCECFF">**R**</mark>. Models applied in the analysis to predict numeric responses included the **Linear Regression**, **Penalized Regression (Ridge, Least Absolute Shrinkage and Selection Operator, ElasticNet)**, **Principal Component Regression**, **Partial Least Squares**, **Averaged Neural Network**, **Multivariate Adaptive Regression Splines**, **Support Vector Machine (Radial Basis Function Kernel, Polynomial Kernel)**, **K-Nearest Neighbors**, **Classification and Regression Trees**, **Conditional Inference Trees**, **Random Forest** and **Cubist** algorithms. The resulting predictions derived from the candidate models were evaluated in terms of their model fit using the r-squared and root mean squred error (RMSE) metrics.
+| This project implements different predictive modelling procedures for numeric responses using various helpful packages in <mark style="background-color: #CCECFF">**R**</mark>. Models applied in the analysis to predict numeric responses included the **Linear Regression**, **Penalized Regression (Ridge, Least Absolute Shrinkage and Selection Operator, ElasticNet)**, **Principal Component Regression**, **Partial Least Squares**, **Averaged Neural Network**, **Multivariate Adaptive Regression Splines**, **Support Vector Machine (Radial Basis Function Kernel, Polynomial Kernel)**, **K-Nearest Neighbors**, **Classification and Regression Trees**, **Conditional Inference Trees**, **Random Forest** and **Cubist** algorithms. The resulting predictions derived from the candidate models were evaluated in terms of their model fit using the r-squared and root mean squred error (RMSE) metrics. All results were consolidated in a [<span style="color: #FF0000">**Summary**</span>](#summary) presented at the end of the document.
 |
 | Regression learning refers to a predictive modelling problem where numerical continuous responses are predicted for a given sample of input data. These models use the training data set and calculate how to approximate a mapping function from input variables to a continuous output variable. Because a regression predictive model predicts a quantity, the performance of the model is typically reported as an error in those predictions. The algorithms applied in this study (mostly contained in the <mark style="background-color: #CCECFF">**caret**</mark> package) attempt to explore the relationships between the response and predictor variables by finding an optimal function for identifying and distinguishing the data into continuous real values and making predictions of that quantity.
 |
@@ -106,8 +106,6 @@ PDA <- Solubility_Train
 </details>
 
 ##  1.2 Data Quality Assessment
-|
-| Data quality assessment:
 |
 | **[A]** No missing observations noted for any variable.
 |
@@ -361,8 +359,6 @@ if (length(names(DQA.Predictors.Numeric))==0) {
 
 ###  1.3.1 Outlier
 |
-| Outlier data assessment:
-|
 | **[A]** Outliers noted for 20 variables  with the numeric data visualized through a boxplot including observations classified as suspected outliers using the IQR criterion. The IQR criterion means that all observations above the (75th percentile + 1.5 x IQR) or below the (25th percentile - 1.5 x IQR) are suspected outliers, where IQR is the difference between the third quartile (75th percentile) and first quartile (25th percentile). Outlier treatment for numerical stability remains optional depending on potential model requirements for the subsequent steps.
 |      **[A.1]** <span style="color: #FF0000">MolWeight	</span> variable (8 outliers detected)
 |      **[A.2]** <span style="color: #FF0000">NumAtoms</span> variable (44 outliers detected)
@@ -444,8 +440,6 @@ dim(DPA.Predictors.Numeric)
 
 ###  1.3.2 Zero and Near-Zero Variance
 |
-| Zero and near-zero variance data assessment:
-|
 | **[A]** Low variance noted for 127 variables from the previous data quality assessment using a lower threshold.
 |
 | **[B]** Low variance noted for 3 variables using a preprocessing summary from the <mark style="background-color: #CCECFF">**caret**</mark> package. The <span style="color: #0000FF">nearZeroVar</span> method using both the <span style="color: #0000FF">freqCut</span> and <span style="color: #0000FF">uniqueCut</span> criteria set at 95/5 and 10, respectively, were applied on the dataset.
@@ -526,8 +520,6 @@ dim(DPA_ExcludedLowVariance)
 </details>
 
 ###  1.3.3 Collinearity
-|
-| High collinearity data assessment:
 |
 | **[A]** High correlation > 95% were noted for 2 variable pairs as confirmed using the preprocessing summaries from the <mark style="background-color: #CCECFF">**caret**</mark> and <mark style="background-color: #CCECFF">**lares**</mark> packages.
 |      **[A.1]** <span style="color: #FF0000">NumNonHAtoms</span> and <span style="color: #FF0000">NumNonHBonds</span> variables (numeric)
@@ -641,8 +633,6 @@ dim(DPA_ExcludedHighCorrelation)
 
 ###  1.3.4 Linear Dependencies
 |
-| Linear dependency data assessment:
-|
 | **[A]** Linear dependencies noted for 2 subsets of variables using the preprocessing summary from the <mark style="background-color: #CCECFF">**caret**</mark> package applying the <span style="color: #0000FF">findLinearCombos</span> method which utilizes the QR decomposition of a matrix to enumerate sets of linear combinations (if they exist).
 |
 | **[B]** Subset 1
@@ -744,8 +734,6 @@ dim(DPA_ExcludedLinearlyDependent)
 
 ###  1.3.5 Shape Transformation
 |
-| Data transformation assessment:
-|
 | **[A]** A number of numeric variables in the dataset were observed to be right-skewed which required shape transformation for data distribution stability. Considering that all numeric variables were strictly positive values, the <span style="color: #0000FF">BoxCox</span> method from the <mark style="background-color: #CCECFF">**caret**</mark> package was used to transform their distributional shapes.
 |
 | 
@@ -789,8 +777,6 @@ dim(DPA_BoxCoxTransformed)
 </details>
 
 ###  1.3.6 Centering and Scaling
-|
-| Centering and scaling data assessment:
 |
 | **[A]** To maintain numerical stability during modelling, centering and scaling transformations were applied on the transformed numeric variables. The <span style="color: #0000FF">center</span> method from the <mark style="background-color: #CCECFF">**caret**</mark> package was implemented which subtracts the average value of a numeric variable to all the values. As a result of centering, the variables had zero mean values. In addition, the <span style="color: #0000FF">scale</span> method, also from the <mark style="background-color: #CCECFF">**caret**</mark> package, was applied which performs a center transformation with each value of the variable divided by its standard deviation. Scaling the data coerced the values to have a common standard deviation of one.
 |
@@ -841,8 +827,6 @@ dim(DPA.Predictors.Numeric_BoxCoxTransformed_CenteredScaledTransformed)
 </details>
 
 ###  1.3.7 Pre-Processed Dataset
-|
-| Preliminary dataset assessment:
 |
 | **[A]** 1267 rows (observations)
 |      **[A.1]** Train Set = 951 observations
@@ -935,8 +919,6 @@ dim(PMA_PreModelling_Test)
 </details>
 
 ## 1.4 Data Exploration
-|
-| Exploratory data analysis:
 |
 | **[A]** Numeric variables which demonstrated linear or non-linear relationships with the <span style="color: #FF0000">Log_Solubility</span> response variable include:
 |      **[A.1]** <span style="color: #FF0000">MolWeight</span> variable (numeric)
@@ -2832,9 +2814,7 @@ CUB_Test
 
 </details>
 
-##  1.6 Model Evaluation Summary
-|
-| Model performance comparison:
+##  1.6 Consolidated Findings
 |
 | **[A]** The models which demonstrated the best and most consistent r-squared and RMSE metrics are as follows:
 |      **[A.1]** **CUB: Cubist** (<mark style="background-color: #CCECFF">**Cubist**</mark> package)
@@ -2975,8 +2955,12 @@ print(RMSE_Summary, row.names=FALSE)
 ```
 
 </details>
-
-# **2. References**
+|
+# **2. Summary** <a name="summary"></a>
+|
+| ![](D:/Github_Codes/ProjectPortfolio/Portfolio_Project_9/docs/Project9_Summary.png)
+|
+# **3. References**
 |
 | **[Book]** [Applied Predictive Modeling](http://appliedpredictivemodeling.com/) by Max Kuhn and Kjell Johnson
 | **[Book]** [An Introduction to Statistical Learning](https://www.statlearning.com/) by Gareth James, Daniela Witten, Trevor Hastie and Rob Tibshirani
